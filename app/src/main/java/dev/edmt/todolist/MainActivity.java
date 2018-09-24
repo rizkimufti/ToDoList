@@ -86,4 +86,12 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-   
+    public void deleteTask(View view){
+        View parent = (View)view.getParent();
+        TextView taskTextView = (TextView)parent.findViewById(R.id.task_title);
+        Log.e("String", (String) taskTextView.getText());
+        String task = String.valueOf(taskTextView.getText());
+        dbHelper.deleteTask(task);
+        loadTaskList();
+    }
+}
