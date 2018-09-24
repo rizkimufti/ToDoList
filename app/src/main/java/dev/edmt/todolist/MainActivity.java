@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class                                                                                                  MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     DbHelper dbHelper;
     ArrayAdapter<String> mAdapter;
@@ -86,4 +86,4 @@ public class                                                                    
         return super.onOptionsItemSelected(item);
     }
 
- 
+   
