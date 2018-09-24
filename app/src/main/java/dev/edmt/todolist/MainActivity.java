@@ -36,4 +36,16 @@ public class                                                                    
         loadTaskList();
     }
 
-   
+    private void loadTaskList() {
+        ArrayList<String> taskList = dbHelper.getTaskList();
+        if(mAdapter==null){
+            mAdapter = new ArrayAdapter<String>(this,R.layout.row,R.id.task_title,taskList);
+            lstTask.setAdapter(mAdapter);
+        }
+        else{
+            mAdapter.clear();
+            mAdapter.addAll(taskList);
+            mAdapter.notifyDataSetChanged();
+        }
+    }
+
